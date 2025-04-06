@@ -1,0 +1,9 @@
+
+Time →
+1. fs.readFile A  → sent to event loop
+2. fs.readFile B  → sent to event loop
+3. console.log     → runs immediately
+4. readFileSync    → blocks everything
+   (even if A/B are done, they WAIT)
+5. readFileSync finishes
+6. Now callbacks for A & B run
